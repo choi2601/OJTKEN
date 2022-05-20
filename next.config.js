@@ -15,10 +15,10 @@ const nextConfig = {
   webpack: function (config, { isServer, buildId }) {
     config.resolve = {
       alias: {
-        "@apis": path.resolve(__dirname, "./apis"),
-        "@hooks": path.resolve(__dirname, "./hooks"),
-        "@components": path.resolve(__dirname, "./components"),
-        "@styles": path.resolve(__dirname, "./styles"),
+        "@apis": path.resolve(__dirname, "apis"),
+        "@hooks": path.resolve(__dirname, "hooks"),
+        "@components": path.resolve(__dirname, "components"),
+        "@styles": path.resolve(__dirname, "styles"),
       },
       ...config.resolve,
     };

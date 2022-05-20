@@ -1,12 +1,7 @@
-import type { NextPage } from "next";
-import Test from "@components/tmp";
+import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
-  return (
-    <div>
-      <Test />
-    </div>
-  );
+  return <div>Home</div>;
 };
 
 export default Home;
