@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
-import Test from "@components/tmp";
+import Tmp from "@components/tmp";
 
 const Home: NextPage = () => {
   return (
     <div>
-      <Test />
+      <Tmp />
     </div>
   );
 };
