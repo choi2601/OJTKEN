@@ -15,7 +15,13 @@
     "jsx": "preserve",
     "rootDir": ".",
     "incremental": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@apis/*": ["apis/*"],
+      "@hooks/*": ["hooks/*"],
+      "@components/*": ["components/*"],
+      "@styles/*": ["styles/*"]
+    }
   },
   "include": [
     "next-env.d.ts",

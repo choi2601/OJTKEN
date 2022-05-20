@@ -1,9 +1,12 @@
 import type { NextPage } from "next";
-
-import TestIcon from "public/icon-plus_button.svg";
+import Test from "@components/tmp";
 
 const Home: NextPage = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <Test />
+    </div>
+  );
 };
 
 export default Home;
