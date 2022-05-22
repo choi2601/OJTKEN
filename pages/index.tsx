@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { NextPage } from 'next';
 
 const Index: NextPage = () => {
   return <p>redirect to home</p>;
