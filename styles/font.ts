@@ -1,32 +1,24 @@
 import { createGlobalStyle } from 'styled-components';
-import { reset } from 'styled-reset';
 
-export const GlobalStyle = createGlobalStyle`
-    ${reset}
-    * {
-        box-sizing: border-box;
-    }
-   
-    @font-face {
+export default createGlobalStyle`
+     @font-face {
         font-family: 'Roboto-Bold';
-        src: url('/font/Roboto-Bold.ttf') format('truetype');
+        src: url('/font/Roboto-Bold.woff') format('woff');
         font-weight: normal;
         font-style: normal;
     }
 
    @font-face {
        font-family: 'Roboto-Regular';
-       src: url('/font/Roboto-Regular.ttf') format("truetype");
+       src: url('/font/Roboto-Regular.woff') format("woff");
        font-weight: normal;
        font-style: normal;
    }
 
     @font-face {
         font-family: 'Roboto-Light';
-        src: url('/font/Roboto-Light.ttf') format("truetype");
+        src: url('/font/Roboto-Light.woff') format("woff");
         font-weight: normal;
         font-style: normal;
     }
 `;
-
-export default GlobalStyle;

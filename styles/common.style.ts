@@ -1,36 +1,38 @@
 import styled from 'styled-components';
 
-export const SizedBox = styled.div<{ width?: number; height?: number }>`
+import type * as T from 'types/styles';
+
+const SizedBox = styled.div<T.SizedBoxType>`
   width: ${(props) => props.width}px;
   height: ${(props) => props.height}px;
 `;
 
-export const FlexBox = styled.div`
+const FlexBox = styled.div`
   display: flex;
 `;
 
-export const FlexCenter = styled(FlexBox)`
+const FlexCenter = styled(FlexBox)`
   justify-content: center;
   align-items: center;
 `;
 
-export const ButtonCenter = styled.button`
+const ButtonCenter = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-export const TextArea = styled.p<{
-  sort: string;
-  size: string;
-  weight?: number;
-  center?: boolean;
-  color?: string;
-}>`
+const TextArea = styled.p<T.TextAreaType>`
   font-family: ${(props) => props.sort};
   font-size: ${(props) => props.size};
   font-weight: ${(props) => props.weight};
   color: ${(props) => props.color};
 
-  ${(props) => (props.center ? 'margin: 0 auto' : '')};
+  ${(props) => (props.center ? 'text-align: center' : '')};
 `;
+
+TextArea.defaultProps = {
+  sort: 'Roboto-Regular',
+};
+
+export { SizedBox, FlexBox, FlexCenter, ButtonCenter, TextArea };

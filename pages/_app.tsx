@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
 
-import { GlobalStyle } from '@styles/globalStyles';
+import GlobalStyle from '@styles/global.style';
+import GlobalFont from '@styles/font';
+
 import { ThemeProvider } from 'styled-components';
 import { theme } from '@styles/theme';
 
@@ -11,15 +13,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <link rel="preload" href="/font/Roboto-Bold.ttf" as="font" />
-        <link rel="preload" href="/font/Roboto-Regular.ttf" as="font" />
-        <link rel="preload" href="/font/Roboto-Light.ttf" as="font" />
-
         <title>OJT-Ken</title>
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
+        <GlobalFont />
         <Component {...pageProps} />
       </ThemeProvider>
     </>

@@ -1,6 +1,6 @@
 import { DefaultTheme } from 'styled-components';
 
-export const theme: DefaultTheme = {
+const theme: DefaultTheme = {
   color: {
     white: '#ffffff',
     black: '#000000',
@@ -15,3 +15,5 @@ export const theme: DefaultTheme = {
     point_high: '#de3366',
   },
 };
+
+export { theme };
