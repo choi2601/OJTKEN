@@ -30,9 +30,9 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="preload" href="/font/Roboto-Bold.woff" as="font" />
-          <link rel="preload" href="/font/Roboto-Regular.woff" as="font" />
-          <link rel="preload" href="/font/Roboto-Light.woff" as="font" />
+          <link rel="preload" href="/font/Roboto-Bold.woff" as="font" crossOrigin="" />
+          <link rel="preload" href="/font/Roboto-Regular.woff" as="font" crossOrigin="" />
+          <link rel="preload" href="/font/Roboto-Light.woff" as="font" crossOrigin="" />
         </Head>
         <body>
           <Main />

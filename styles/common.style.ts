@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import type * as T from 'types/styles';
+import type * as StyleType from 'types/styles';
 
-const SizedBox = styled.div<T.SizedBoxType>`
+const SizedBox = styled.div<StyleType.SizedBoxType>`
   width: ${(props) => props.width}px;
   height: ${(props) => props.height}px;
 `;
@@ -22,7 +22,7 @@ const ButtonCenter = styled.button`
   align-items: center;
 `;
 
-const TextArea = styled.p<T.TextAreaType>`
+const TextArea = styled.p<StyleType.TextAreaType>`
   font-family: ${(props) => props.sort};
   font-size: ${(props) => props.size};
   font-weight: ${(props) => props.weight};
