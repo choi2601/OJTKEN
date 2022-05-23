@@ -13,10 +13,10 @@ interface BeerInfoType {
   srm: number;
   ph: number;
   attenuation_level: number;
-  volume: BoilVolume;
-  boil_volume: BoilVolume;
-  method: Method;
-  ingredients: Ingredients;
+  volume: BoilVolumeType;
+  boil_volume: BoilVolumeType;
+  method: MethodType;
+  ingredients: IngredientsType;
   food_pairing: string[];
   brewers_tips: string;
   contributed_by: string;
@@ -28,35 +28,35 @@ interface BoilVolumeType {
 }
 
 interface IngredientsType {
-  malt: Malt[];
-  hops: Hop[];
+  malt: MaltType[];
+  hops: HopType[];
   yeast: string;
 }
 
 interface HopType {
   name: string;
-  amount: BoilVolume;
+  amount: BoilVolumeType;
   add: string;
   attribute: string;
 }
 
 interface MaltType {
   name: string;
-  amount: BoilVolume;
+  amount: BoilVolumeType;
 }
 
 interface MethodType {
-  mash_temp: MashTemp[];
-  fermentation: Fermentation;
+  mash_temp: MashTempType[];
+  fermentation: FermentationType;
   twist: null;
 }
 
 interface FermentationType {
-  temp: BoilVolume;
+  temp: BoilVolumeType;
 }
 
 interface MashTempType {
-  temp: BoilVolume;
+  temp: BoilVolumeType;
   duration: number;
 }
 
