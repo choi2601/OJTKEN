@@ -12,6 +12,8 @@ import { theme } from '@styles/theme';
 import { QueryClient, QueryClientProvider, Hydrate } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
+import Layout from '@components/common/layout';
+
 function MyApp({ Component, pageProps }: AppProps) {
   const queryClient = new QueryClient();
   return (
@@ -26,7 +28,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
           <ThemeProvider theme={theme}>
-            <Component {...pageProps} />
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
           </ThemeProvider>
         </Hydrate>
         <ReactQueryDevtools initialIsOpen={false} position="bottom-left" />
