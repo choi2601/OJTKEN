@@ -17,10 +17,11 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@apis/*": ["apis/*"],
+      "@api/*": ["api/*"],
       "@hooks/*": ["hooks/*"],
       "@components/*": ["components/*"],
-      "@styles/*": ["styles/*"]
+      "@styles/*": ["styles/*"],
+      "@const/*": ["const/*"]
     }
   },
   "include": [

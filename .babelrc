@@ -6,10 +6,11 @@
       {
         "root": ["./"],
         "alias": {
-          "@apis": "./apis",
+          "@api": "./api",
           "@hooks": "./hooks",
           "@components": "./components",
-          "@styles": "./styles"
+          "@styles": "./styles",
+          "@const": "./const"
         }
       }
     ],
