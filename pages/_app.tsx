@@ -9,11 +9,11 @@ import GlobalFont from '@styles/font';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '@styles/theme';
 
-import { QueryClient, QueryClientProvider, Hydrate, Query } from 'react-query';
+import { QueryClient, QueryClientProvider, Hydrate } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const queryClient = React.useRef(new QueryClient());
+  const queryClient = new QueryClient();
   return (
     <>
       <Head>
@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <GlobalStyle />
       <GlobalFont />
-      <QueryClientProvider client={queryClient.current}>
+      <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
           <ThemeProvider theme={theme}>
             <Component {...pageProps} />
