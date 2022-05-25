@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 
-const Style = {
-  LayoutWrapper: styled.section`
-    max-width: 60vw;
-    margin: 0 auto;
-    font-family: 'Roboto-Regular';
-  `,
-  Footer: styled.footer`
-    height: 2vh;
-  `,
-};
+const LayoutWrapper = styled.section`
+  max-width: 60vw;
+  margin: 0 auto;
+  font-family: 'Roboto-Regular';
+`;
+const Footer = styled.footer`
+  height: 2vh;
+`;
 
-export default Style;
+export { LayoutWrapper, Footer };

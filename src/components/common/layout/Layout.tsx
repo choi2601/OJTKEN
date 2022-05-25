@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import Style from './LayoutStyle';
+import * as Style from './LayoutStyle';
 
 import Navigation from '@components/common/navigation';
 

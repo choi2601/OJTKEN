@@ -1,18 +1,16 @@
 import styled, { css } from 'styled-components';
 
-const Style = {
-  NavigationWrapper: styled.section`
-    ${({ theme }) => {
-      const { color } = theme;
+const NavigationWrapper = styled.section`
+  ${({ theme }) => {
+    const { color } = theme;
 
-      return css`
-        background-color: ${color.blue[900]};
-      `;
-    }}
-  `,
-  TabMenu: styled.ul`
-    display: flex;
-  `,
-};
+    return css`
+      background-color: ${color.blue[900]};
+    `;
+  }}
+`;
+const TabMenu = styled.ul`
+  display: flex;
+`;
 
-export default Style;
+export { NavigationWrapper, TabMenu };

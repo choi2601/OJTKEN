@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import Style from './NavigationStyle';
+import * as Style from './NavigationStyle';
 import { useRouter } from 'next/router';
 
 import LabelToLink from '@components/common/labelToLink';

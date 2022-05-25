@@ -1,4 +1,4 @@
-import Style from './LabelToLinkStyle';
+import * as Style from './LabelToLinkStyle';
 import Link from 'next/link';
 interface LabelToLinkProps {
   keyword: string;
