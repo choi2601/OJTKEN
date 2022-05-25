@@ -4,15 +4,15 @@ import Head from 'next/head';
 import type { AppProps } from 'next/app';
 
 import GlobalStyle from '@styles/globalStyle';
-import GlobalFont from 'src/styles/font';
+import GlobalFont from '@styles/font';
 
 import { ThemeProvider } from 'styled-components';
-import { theme } from 'src/styles/theme';
+import { theme } from '@styles/theme';
 
 import { QueryClient, QueryClientProvider, Hydrate } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
-import Layout from 'src/components/common/layout';
+import Layout from '@components/common/layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const queryClient = new QueryClient();

@@ -15,26 +15,16 @@
     "jsx": "preserve",
     "rootDir": ".",
     "incremental": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "@api/*": ["src/api/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@components/*": ["src/components/*"],
-      "@styles/*": ["src/styles/*"],
-      "@const/*": ["src/const/*"],
-      "@type/*": ["src/type/*"]
+      "@api/*": ["api/*"],
+      "@hooks/*": ["hooks/*"],
+      "@components/*": ["components/*"],
+      "@styles/*": ["styles/*"],
+      "@const/*": ["const/*"],
+      "@type/*": ["type/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "next.config.js",
-    "src",
-    "custom.d.ts",
-    "src/styles",
-    "src/pages",
-    "public"
-  ],
+  "include": ["**/*.ts", "**/*.tsx", "./src", "custom.d.ts", "public"],
   "exclude": ["node_modules"]
 }
