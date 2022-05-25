@@ -5,7 +5,7 @@ import LabelToLink from '@components/common/labelToLink';
 
 import { navigationList } from '@const/navigationData';
 
-const Navigation: React.FC = () => {
+const Navigation = (): JSX.Element => {
   const [active, setActive] = useState('home');
 
   const handleLabelToLinkButton = useCallback(

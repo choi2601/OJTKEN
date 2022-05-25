@@ -1,9 +1,9 @@
+import { PropsWithChildren } from 'react';
 import * as Style from './Layout.style';
 
 import Navigation from '@components/common/navigation';
-import type { PropsWithChildren } from '@type/props';
 
-const Layout: React.FC<PropsWithChildren> = ({ children }) => {
+const Layout = ({ children }: PropsWithChildren<unknown>): JSX.Element => {
   return (
     <Style.LayoutWrapper>
       <Navigation />

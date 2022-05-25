@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import type { LabelToLinkProps } from './LabelToLink.type';
 
-const LabelToLink: React.FC<LabelToLinkProps> = ({ keyword, isActive, handleLabelToLinkButton }) => {
+const LabelToLink = ({ keyword, isActive, handleLabelToLinkButton }: LabelToLinkProps): JSX.Element => {
   return (
     <Style.LabelToLinkWrapper isActive={isActive}>
       <Link href={`/${keyword}`}>
