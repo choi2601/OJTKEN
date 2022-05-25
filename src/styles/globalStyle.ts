@@ -5,6 +5,12 @@ const GlobalStyle = createGlobalStyle`
     ${reset}
     * {
         box-sizing: border-box;
+        list-style: none;
+    }
+    a {
+        display: block;
+        text-decoration: none;
+        outline: none;
     }
 `;
 

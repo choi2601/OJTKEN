@@ -3,7 +3,7 @@ import React from 'react';
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
 
-import GlobalStyle from '@styles/global.style';
+import GlobalStyle from '@styles/globalStyle';
 import GlobalFont from '@styles/font';
 
 import { ThemeProvider } from 'styled-components';
@@ -11,6 +11,8 @@ import { theme } from '@styles/theme';
 
 import { QueryClient, QueryClientProvider, Hydrate } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+
+import Layout from '@components/common/layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const queryClient = new QueryClient();
@@ -26,7 +28,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
           <ThemeProvider theme={theme}>
-            <Component {...pageProps} />
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
           </ThemeProvider>
         </Hydrate>
         <ReactQueryDevtools initialIsOpen={false} position="bottom-left" />

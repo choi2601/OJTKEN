@@ -2,19 +2,6 @@
   "presets": ["next/babel"],
   "plugins": [
     [
-      "module-resolver",
-      {
-        "root": ["./"],
-        "alias": {
-          "@api": "./api",
-          "@hooks": "./hooks",
-          "@components": "./components",
-          "@styles": "./styles",
-          "@const": "./const"
-        }
-      }
-    ],
-    [
       "styled-components",
       {
         "ssr": true,

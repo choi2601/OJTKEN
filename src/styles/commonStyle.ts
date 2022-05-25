@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import type * as StyleType from 'types/styles';
+import type * as StyleType from '@type/styles';
 
 const SizedBox = styled.div<StyleType.SizedBoxType>`
   width: ${(props) => props.width}px;
