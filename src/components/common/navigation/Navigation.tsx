@@ -1,12 +1,15 @@
 import { useCallback, useState } from 'react';
 import Style from './NavigationStyle';
+import { useRouter } from 'next/router';
 
 import LabelToLink from '@components/common/labelToLink';
 
 import { navigationList } from '@const/navigationData';
 
 function Navigation() {
-  const [active, setActive] = useState('home');
+  const currentPathName = useRouter().pathname.slice(1);
+
+  const [active, setActive] = useState(currentPathName);
 
   const handleLabelToLinkButton = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>) => {
