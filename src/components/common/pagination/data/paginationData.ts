@@ -1,0 +1,9 @@
+const DEFAULT_MAX_PAGE = 20;
+
+const DEFAULT_MIN_PAGE = 1;
+
+const PER_PAGE = 1;
+
+const PAGE_RANGE = 4;
+
+export { DEFAULT_MAX_PAGE, DEFAULT_MIN_PAGE, PER_PAGE, PAGE_RANGE };
