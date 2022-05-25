@@ -1,11 +1,16 @@
 import { useState } from 'react';
 import * as Style from './PaginationStyle';
 
+import { useRouter } from 'next/router';
+
 import { DEFAULT_MAX_PAGE, DEFAULT_MIN_PAGE, PER_PAGE, PAGE_RANGE } from './data/paginationData';
 
 function Pagination() {
   const [currentPage, setCurrentPage] = useState(DEFAULT_MIN_PAGE);
   const [item, setItem] = useState([1, 2, 3, 4]);
+
+  const router = useRouter();
+  const currentPath = router.pathname.slice(1);
 
   // filter 결과에 따라 조건부 할당 예정
   const maxPage = DEFAULT_MAX_PAGE;
@@ -16,6 +21,7 @@ function Pagination() {
     if (currentSelectedPage === currentPage) return;
 
     setCurrentPage(currentSelectedPage);
+    router.push(`${currentPath}/?page=${currentSelectedPage}`);
   };
 
   const handleNextPage = () => {
@@ -37,6 +43,7 @@ function Pagination() {
       }
 
       setCurrentPage(newPage);
+      router.push(`${currentPath}/?page=${newPage}`);
     }
   };
 
@@ -59,6 +66,7 @@ function Pagination() {
       }
 
       setCurrentPage(newPage);
+      router.push(`${currentPath}/?page=${newPage}`);
     }
   };
 
