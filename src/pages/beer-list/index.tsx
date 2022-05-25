@@ -1,17 +1,23 @@
 import { dehydrate, QueryClient } from 'react-query';
+import styled from 'styled-components';
+
+import Pagination from '@components/common/pagination/Pagination';
 
 import { axiosProduct } from '@api/base.api';
 
 function BeerList() {
-  return <div>beerList</div>;
+  return (
+    <BeerListWrapper>
+      <div>beerList</div>
+      <Pagination />
+    </BeerListWrapper>
+  );
 }
 
 export async function getServerSideProps(context) {
   let page = 1;
 
-  if (context.query.page) {
-    page = parseInt(context.query.page);
-  }
+  if (context.query.page) page = parseInt(context.query.page);
 
   const queryClient = new QueryClient();
   const params = { page };
@@ -25,3 +31,5 @@ export async function getServerSideProps(context) {
 }
 
 export default BeerList;
+
+const BeerListWrapper = styled.section``;
