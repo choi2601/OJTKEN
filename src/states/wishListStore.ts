@@ -1,6 +1,6 @@
 import create from 'zustand';
 
-import type { BeerInfoType } from 'types/beerInfo';
+import type { BeerInfoType } from '@type/beerInfo';
 
 interface WishListState {
   beerInfoList: BeerInfoType[];

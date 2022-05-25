@@ -3,16 +3,16 @@ import React from 'react';
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
 
-import GlobalStyle from '@styles/global.style';
-import GlobalFont from '@styles/font';
+import GlobalStyle from 'src/styles/global.style';
+import GlobalFont from 'src/styles/font';
 
 import { ThemeProvider } from 'styled-components';
-import { theme } from '@styles/theme';
+import { theme } from 'src/styles/theme';
 
 import { QueryClient, QueryClientProvider, Hydrate } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
-import Layout from '@components/common/layout';
+import Layout from 'src/components/common/layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const queryClient = new QueryClient();

@@ -17,11 +17,12 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@api/*": ["api/*"],
-      "@hooks/*": ["hooks/*"],
-      "@components/*": ["components/*"],
-      "@styles/*": ["styles/*"],
-      "@const/*": ["const/*"]
+      "@api/*": ["src/api/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@components/*": ["src/components/*"],
+      "@styles/*": ["src/styles/*"],
+      "@const/*": ["src/const/*"],
+      "@type/*": ["src/type/*"]
     }
   },
   "include": [
@@ -31,8 +32,8 @@
     "next.config.js",
     "src",
     "custom.d.ts",
-    "styles",
-    "pages",
+    "src/styles",
+    "src/pages",
     "public"
   ],
   "exclude": ["node_modules"]
