@@ -1,9 +1,9 @@
 import { PropsWithChildren } from 'react';
-import * as Style from './Layout.style';
+import Style from './LayoutStyle';
 
 import Navigation from '@components/common/navigation';
 
-const Layout = ({ children }: PropsWithChildren<unknown>): JSX.Element => {
+function Layout({ children }: PropsWithChildren<unknown>) {
   return (
     <Style.LayoutWrapper>
       <Navigation />
@@ -11,6 +11,6 @@ const Layout = ({ children }: PropsWithChildren<unknown>): JSX.Element => {
       <Style.Footer />
     </Style.LayoutWrapper>
   );
-};
+}
 
 export default Layout;

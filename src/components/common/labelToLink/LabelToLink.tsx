@@ -1,9 +1,12 @@
-import * as Style from './LabelToLink.style';
+import Style from './LabelToLinkStyle';
 import Link from 'next/link';
+interface LabelToLinkProps {
+  keyword: string;
+  isActive: boolean;
+  handleLabelToLinkButton: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+}
 
-import type { LabelToLinkProps } from './LabelToLink.type';
-
-const LabelToLink = ({ keyword, isActive, handleLabelToLinkButton }: LabelToLinkProps): JSX.Element => {
+function LabelToLink({ keyword, isActive, handleLabelToLinkButton }: LabelToLinkProps) {
   return (
     <Style.LabelToLinkWrapper isActive={isActive}>
       <Link href={`/${keyword}`}>
@@ -13,6 +16,6 @@ const LabelToLink = ({ keyword, isActive, handleLabelToLinkButton }: LabelToLink
       </Link>
     </Style.LabelToLinkWrapper>
   );
-};
+}
 
 export default LabelToLink;

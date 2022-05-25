@@ -1,11 +1,11 @@
 import { useCallback, useState } from 'react';
-import * as Style from './Navigation.style';
+import Style from './NavigationStyle';
 
 import LabelToLink from '@components/common/labelToLink';
 
 import { navigationList } from '@const/navigationData';
 
-const Navigation = (): JSX.Element => {
+function Navigation() {
   const [active, setActive] = useState('home');
 
   const handleLabelToLinkButton = useCallback(
@@ -37,6 +37,6 @@ const Navigation = (): JSX.Element => {
       </Style.TabMenu>
     </Style.NavigationWrapper>
   );
-};
+}
 
 export default Navigation;
