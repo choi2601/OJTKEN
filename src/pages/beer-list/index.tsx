@@ -1,7 +1,5 @@
-import type { NextPage } from 'next';
-
-const BeerList: NextPage = () => {
+function BeerList() {
   return <div>beerList</div>;
-};
+}
 
 export default BeerList;

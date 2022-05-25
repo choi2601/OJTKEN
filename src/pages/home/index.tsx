@@ -1,7 +1,5 @@
-import type { NextPage } from 'next';
-
-const Home: NextPage = () => {
+function Home() {
   return <div>Home</div>;
-};
+}
 
 export default Home;

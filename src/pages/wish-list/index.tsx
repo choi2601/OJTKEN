@@ -1,7 +1,5 @@
-import type { NextPage } from 'next';
-
-const WishList: NextPage = () => {
+function WishList() {
   return <div>wishList</div>;
-};
+}
 
 export default WishList;
