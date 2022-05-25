@@ -6,7 +6,7 @@ const Style = {
     margin: 0 auto;
     font-family: 'Roboto-Regular';
   `,
-  Footer: styled.section`
+  Footer: styled.footer`
     height: 2vh;
   `,
 };
