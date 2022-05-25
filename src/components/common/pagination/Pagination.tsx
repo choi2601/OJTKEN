@@ -97,7 +97,7 @@ function Pagination() {
         })}
       </Style.PaginationList>
       <Style.MoveButton onClick={handleNextPage} disabled={checkLastPage()}>
-        <Style.ArrowIcon src="/icon/icon-right_arrow.svg" alt="icon-right_arrow" width="25px" height="25px" />
+        <Style.ArrowIcon src="/icon/icon-right_arrow.svg" alt="icon-right_arrow" />
       </Style.MoveButton>
     </Style.PaginationWrapper>
   );
