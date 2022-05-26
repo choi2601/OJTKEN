@@ -4,7 +4,7 @@ const theme: DefaultTheme = {
   color: {
     white: '#ffffff',
     black: '#000000',
-    gary: {
+    gray: {
       100: '#f1f3f5',
       200: '#e9ecef',
       300: '#dee2e6',

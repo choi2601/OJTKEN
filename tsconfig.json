@@ -22,7 +22,8 @@
       "@components/*": ["components/*"],
       "@styles/*": ["styles/*"],
       "@const/*": ["const/*"],
-      "@type/*": ["type/*"]
+      "@type/*": ["type/*"],
+      "@states/*": ["states/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", "./src", "custom.d.ts", "public"],

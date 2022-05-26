@@ -21,6 +21,7 @@ const nextConfig = {
         '@styles': path.resolve(__dirname, 'src/styles'),
         '@const': path.resolve(__dirname, 'src/const'),
         '@type': path.resolve(__dirname, 'src/type'),
+        '@states': path.resolve(__dirname, 'src/states'),
       },
       ...config.resolve,
     };
