@@ -6,11 +6,12 @@ import { useRouter } from 'next/router';
 import { DEFAULT_MAX_PAGE, DEFAULT_MIN_PAGE, PER_PAGE, PAGE_RANGE } from './data/paginationData';
 
 function Pagination() {
-  const [currentPage, setCurrentPage] = useState(DEFAULT_MIN_PAGE);
-  const [item, setItem] = useState([1, 2, 3, 4]);
-
   const router = useRouter();
   const currentPath = router.pathname.slice(1);
+  const currentPageInPath = router.query.page ? Number(router.query.page) : DEFAULT_MIN_PAGE;
+
+  const [currentPage, setCurrentPage] = useState(currentPageInPath);
+  const [item, setItem] = useState([1, 2, 3, 4]);
 
   // filter 결과에 따라 조건부 할당 예정
   const maxPage = DEFAULT_MAX_PAGE;
