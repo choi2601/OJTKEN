@@ -49,8 +49,8 @@ const MoveButton = styled(PaginationButton)`
 
     return css`
       &:hover {
-        & > img {
-          filter: invert(75%) sepia(4%) saturate(7499%) hue-rotate(178deg) brightness(96%) contrast(106%);
+        & > svg {
+          color: ${color.blue[300]};
         }
       }
 
@@ -58,17 +58,12 @@ const MoveButton = styled(PaginationButton)`
         border: 1px solid ${color.gray[400]};
         cursor: not-allowed;
 
-        & > img {
-          filter: invert(74%) sepia(0%) saturate(0%) hue-rotate(84deg) brightness(101%) contrast(88%);
+        & > svg {
+          color: ${color.gray[400]};
         }
       }
     `;
   }}
 `;
 
-const ArrowIcon = styled.img`
-  width: 25px;
-  height: 25px;
-`;
-
-export { PaginationWrapper, PaginationList, PaginationItem, PaginationButton, MoveButton, ArrowIcon };
+export { PaginationWrapper, PaginationList, PaginationItem, PaginationButton, MoveButton };

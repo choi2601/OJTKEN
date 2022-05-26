@@ -1,33 +1,29 @@
-import { dehydrate, QueryClient } from 'react-query';
 import styled from 'styled-components';
+import { useQuery } from 'react-query';
 
-import Pagination from '@components/common/pagination/Pagination';
+import Pagination from '@components/common/pagination';
 
+import { usePageNumberStore } from '@states/pageNumberStore';
 import { axiosProduct } from '@api/base.api';
 
 function BeerList() {
+  const page = usePageNumberStore((state) => state.page);
+  const { data, isLoading } = useQuery(
+    ['beer-list', page],
+    async () => await axiosProduct.get('', { params: { page } }),
+    {
+      keepPreviousData: true,
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+    },
+  );
+
   return (
     <BeerListWrapper>
       <div>beerList</div>
       <Pagination />
     </BeerListWrapper>
   );
-}
-
-export async function getServerSideProps(context) {
-  let page = 1;
-
-  if (context.query.page) page = parseInt(context.query.page);
-
-  const queryClient = new QueryClient();
-  const params = { page };
-
-  await queryClient.prefetchQuery(
-    ['beerList', page],
-    async () => await axiosProduct.get('', { params }).then((res) => res.data),
-  );
-
-  return { props: { dehydratedState: dehydrate(queryClient) } };
 }
 
 export default BeerList;
