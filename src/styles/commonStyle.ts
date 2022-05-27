@@ -26,6 +26,7 @@ const TextArea = styled.p<StyleType.TextAreaType>`
   font-family: ${(props) => props.sort};
   font-size: ${(props) => props.size};
   font-weight: ${(props) => props.weight};
+  line-height: ${(props) => props.height};
   color: ${(props) => props.color};
 
   ${(props) => (props.center ? 'text-align: center' : '')};
