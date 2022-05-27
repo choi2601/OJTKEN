@@ -20,7 +20,6 @@ function Pagination() {
     if (currentSelectedPage === page) return;
 
     setPage(currentSelectedPage);
-    window.scrollTo(0, 0);
   };
 
   const handleNextPage = useCallback(() => {
@@ -42,7 +41,6 @@ function Pagination() {
       }
 
       nextPage();
-      window.scrollTo(0, 0);
     }
   }, [page]);
 
@@ -65,14 +63,11 @@ function Pagination() {
       }
 
       prevPage();
-      window.scrollTo(0, 0);
     }
   }, [page]);
 
   const checkActive = (num) => {
     if (page === num) return true;
-
-    return false;
   };
 
   const checkDisabledPage = (currentButtonSort) => {

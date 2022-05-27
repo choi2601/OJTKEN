@@ -11,7 +11,11 @@ function BeerList() {
   const page = usePageNumberStore((state) => state.page);
   const { data, isLoading } = useQuery(
     ['beer-list', page],
-    async () => await axiosProduct.get('', { params: { page } }),
+    async () =>
+      await axiosProduct.get('', { params: { page } }).then((res) => {
+        window.scrollTo(0, 0);
+        return res;
+      }),
     {
       keepPreviousData: true,
       refetchOnMount: false,

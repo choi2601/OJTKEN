@@ -17,9 +17,7 @@ function CardBoard(props: CardBoardProps) {
   const checkBeerInfoInWishList = () => {
     const isExisted = wishList.find((beerInfo) => beerInfo.id === id);
 
-    if (isExisted) return true;
-
-    return false;
+    return isExisted;
   };
 
   return (
