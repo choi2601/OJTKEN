@@ -11,7 +11,7 @@ function BeerList() {
   const page = usePageNumberStore((state) => state.page);
   const { data, isLoading } = useQuery(
     ['beer-list', page],
-    async () => await axiosProduct.get('', { params: { page } }).then((res) => res.data),
+    async () => await axiosProduct.get('', { params: { page } }),
     {
       keepPreviousData: true,
       refetchOnMount: false,
@@ -23,7 +23,7 @@ function BeerList() {
 
   return (
     <BeerListWrapper>
-      <ProductTable currentDataInfo={data} />
+      <ProductTable currentDataInfo={data?.data} />
       <Pagination />
     </BeerListWrapper>
   );
