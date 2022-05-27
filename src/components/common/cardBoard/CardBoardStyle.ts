@@ -122,12 +122,18 @@ const ProductABVInfo = styled.div`
 const ProductABVRatio = styled(TextArea)``;
 
 const CustomSportsBarIcon = styled(SportsBarIcon)<{ abv: number }>`
-  ${({ abv }) => {
+  ${({ theme, abv }) => {
+    const { color, abvRatio } = theme;
+
     return css`
       width: 23px;
       height: 23px;
       margin-left: 5px;
-      color: ${abv < 5 ? '#F8D70C' : abv > 10 ? '#FA350F' : '#64D90B'};
+      color: ${abv < abvRatio.low
+        ? color.abvAlert['low']
+        : abv > abvRatio.high
+        ? color.abvAlert['high']
+        : color.abvAlert['medium']};
     `;
   }}
 `;

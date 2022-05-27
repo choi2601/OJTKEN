@@ -26,6 +26,15 @@ declare module 'styled-components' {
         800: string;
         900: string;
       };
+      abvAlert: {
+        low: string;
+        medium: string;
+        high: string;
+      };
+    };
+    abvRatio: {
+      low: number;
+      high: number;
     };
   }
 }
