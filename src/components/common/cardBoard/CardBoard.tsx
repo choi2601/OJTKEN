@@ -1,21 +1,39 @@
 import * as Style from './CardBoardStyle';
 
+import { useWishListStore } from '@states/wishListStore';
+
 import type { BeerInfoType } from '@type/beerInfo';
 
 interface CardBoardProps {
-  item: BeerInfoType;
+  beerInfo: BeerInfoType;
 }
 
 function CardBoard(props: CardBoardProps) {
   const {
-    item: { id, name, image_url, tagline, abv },
+    beerInfo: { id, name, image_url, tagline, abv },
   } = props;
+  const { wishList, addBeerInfo, removeBeerInfo } = useWishListStore();
+
+  const checkBeerInfoInWishList = () => {
+    const isExisted = wishList.find((beerInfo) => beerInfo.id === id);
+
+    if (isExisted) return true;
+
+    return false;
+  };
 
   return (
     <Style.CardBoardWrapper>
-      <Style.AddWishButton>
-        <Style.CustomShoppingCartIcon />
-      </Style.AddWishButton>
+      <Style.StatusBar>
+        <Style.HandleWishListButton>
+          {checkBeerInfoInWishList() ? (
+            <Style.CustomDeleteIcon onClick={() => removeBeerInfo(id)} />
+          ) : (
+            <Style.CustomShoppingCartIcon onClick={() => addBeerInfo(props.beerInfo)} />
+          )}
+        </Style.HandleWishListButton>
+        {checkBeerInfoInWishList() && <Style.CustomCheckCircleIcon />}
+      </Style.StatusBar>
       <Style.ProductFigure>
         <Style.ProductImage src={image_url} />
       </Style.ProductFigure>

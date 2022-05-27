@@ -3,21 +3,21 @@ import create from 'zustand';
 import type { BeerInfoType } from '@type/beerInfo';
 
 interface WishListState {
-  beerInfoList: BeerInfoType[];
+  wishList: BeerInfoType[];
   addBeerInfo: (beerInfo: BeerInfoType) => void;
   removeBeerInfo: (id: number) => void;
 }
 
 const useWishListStore = create<WishListState>((set) => ({
-  beerInfoList: [],
+  wishList: [],
   addBeerInfo: (beerInfo: BeerInfoType) => {
     set((state) => ({
-      beerInfoList: [...state.beerInfoList, beerInfo],
+      wishList: [...state.wishList, beerInfo],
     }));
   },
   removeBeerInfo: (id) => {
     set((state) => ({
-      beerInfoList: state.beerInfoList.filter((beerInfo) => beerInfo.id !== id),
+      wishList: state.wishList.filter((beerInfo) => beerInfo.id !== id),
     }));
   },
 }));

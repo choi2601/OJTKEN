@@ -1,7 +1,10 @@
 import styled, { css } from 'styled-components';
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import DeleteIcon from '@mui/icons-material/Delete';
 import SportsBarIcon from '@mui/icons-material/SportsBar';
+
 import { ButtonCenter, TextArea } from '@styles/commonStyle';
 
 const CardBoardWrapper = styled.article`
@@ -14,15 +17,17 @@ const CardBoardWrapper = styled.article`
       padding: 15px 20px;
       border: 1.3px solid ${color.gray[400]};
       border-radius: 5px;
-      cursor: pointer;
     `;
   }}
 `;
 
-const AddWishButton = styled(ButtonCenter)`
-  position: absolute;
-  top: 10px;
-  right: 10px;
+const StatusBar = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+`;
+
+const HandleWishListButton = styled(ButtonCenter)`
   background: none;
   border: none;
   cursor: pointer;
@@ -33,12 +38,25 @@ const CustomShoppingCartIcon = styled(ShoppingCartIcon)`
     const { color } = theme;
 
     return css`
-      width: 30px;
-      height: 30px;
       color: ${color.black};
 
       &:hover {
-        transform: rotate(350deg);
+        color: ${color.blue[700]};
+      }
+    `;
+  }}
+`;
+
+const CustomCheckCircleIcon = styled(CheckCircleIcon)``;
+
+const CustomDeleteIcon = styled(DeleteIcon)`
+  ${({ theme }) => {
+    const { color } = theme;
+
+    return css`
+      color: ${color.black};
+
+      &:hover {
         color: ${color.blue[700]};
       }
     `;
@@ -47,6 +65,7 @@ const CustomShoppingCartIcon = styled(ShoppingCartIcon)`
 
 const ProductFigure = styled.figure`
   text-align: center;
+  cursor: pointer;
 `;
 
 const ProductImage = styled.img`
@@ -54,8 +73,16 @@ const ProductImage = styled.img`
 `;
 
 const ProductMainInfo = styled.div`
-  padding: 0 10px;
-  margin-top: 20px;
+  ${({ theme }) => {
+    const { color } = theme;
+
+    return css`
+      padding: 0 10px;
+      margin-top: 20px;
+      padding-top: 10px;
+      border-top: 1px solid ${color.gray[400]};
+    `;
+  }}
 `;
 
 const ProductName = styled(TextArea)`
@@ -107,8 +134,11 @@ const CustomSportsBarIcon = styled(SportsBarIcon)<{ abv: number }>`
 
 export {
   CardBoardWrapper,
-  AddWishButton,
+  StatusBar,
+  HandleWishListButton,
   CustomShoppingCartIcon,
+  CustomCheckCircleIcon,
+  CustomDeleteIcon,
   ProductFigure,
   ProductImage,
   ProductMainInfo,

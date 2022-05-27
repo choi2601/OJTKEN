@@ -26,10 +26,10 @@ function BeerList() {
   return (
     <BeerListWrapper>
       <ProductList>
-        {data.map((item: BeerInfoType) => {
+        {data.map((beerInfo: BeerInfoType) => {
           return (
-            <ProductItem key={`${item.id}-${item.name}`}>
-              <CardBoard item={item} />
+            <ProductItem key={`${beerInfo.id}-${beerInfo.name}`}>
+              <CardBoard beerInfo={beerInfo} />
             </ProductItem>
           );
         })}
@@ -43,16 +43,16 @@ export default BeerList;
 
 const BeerListWrapper = styled.section`
   position: relative;
-  padding: 10px 20px;
+  padding: 10px 80px;
 `;
 
 const ProductList = styled.ul`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-flow: row wrap;
   margin-top: 120px;
 `;
 
 const ProductItem = styled.li`
-  width: 40%;
+  width: 45%;
 `;
