@@ -7,6 +7,7 @@ interface TextAreaType {
   sort?: string;
   size?: string;
   weight?: number;
+  height?: number;
   center?: boolean;
   color?: string;
 }

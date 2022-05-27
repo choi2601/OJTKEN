@@ -14,13 +14,16 @@ function Pagination() {
   // filter 결과에 따라 조건부 할당 예정
   const maxPage = DEFAULT_MAX_PAGE;
 
-  const handleSetPage = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const currentSelectedPage = Number(e.currentTarget.dataset.num);
+  const handleSetPage = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      const currentSelectedPage = Number(e.currentTarget.dataset.num);
 
-    if (currentSelectedPage === page) return;
+      if (currentSelectedPage === page) return;
 
-    setPage(currentSelectedPage);
-  };
+      setPage(currentSelectedPage);
+    },
+    [page],
+  );
 
   const handleNextPage = useCallback(() => {
     if (page < maxPage) {
@@ -68,8 +71,6 @@ function Pagination() {
 
   const checkActive = (num) => {
     if (page === num) return true;
-
-    return false;
   };
 
   const checkDisabledPage = (currentButtonSort) => {

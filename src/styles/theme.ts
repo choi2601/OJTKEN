@@ -26,6 +26,15 @@ const theme: DefaultTheme = {
       800: '#1971c2',
       900: '#1864ab',
     },
+    abvAlert: {
+      low: '#F8D70C',
+      medium: '#64D90B',
+      high: '#FA350F',
+    },
+  },
+  abvRatio: {
+    low: 5,
+    high: 10,
   },
 };
 
