@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig } from 'axios';
 
 import { BASE_URL } from '@const/apiUrl';
 
-const axios_timeout = 8000;
+const axios_timeout = 32000;
 const axios_headers = {
   'Access-Control-Allow-Origin': '*',
   'Content-Type': 'application/json; charset=utf-8',
