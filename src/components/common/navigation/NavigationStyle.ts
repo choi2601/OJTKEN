@@ -10,7 +10,7 @@ const NavigationWrapper = styled.nav`
       right: 0;
       width: 60vw;
       margin: 0 auto;
-      z-index: 9999;
+      z-index: 9997;
       background-color: ${color.blue[900]};
     `;
   }}

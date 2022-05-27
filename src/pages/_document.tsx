@@ -34,9 +34,10 @@ class MyDocument extends Document {
           <link rel="preload" href="/font/Roboto-Regular.woff" as="font" crossOrigin="" />
           <link rel="preload" href="/font/Roboto-Light.woff" as="font" crossOrigin="" />
         </Head>
-        <body>
+        <body id="body">
           <Main />
           <NextScript />
+          <div id="portal-section" />
         </body>
       </Html>
     );
