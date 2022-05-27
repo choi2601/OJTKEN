@@ -23,14 +23,18 @@ function CardBoard(props: CardBoardProps) {
   return (
     <Style.CardBoardWrapper>
       <Style.StatusBar>
-        <Style.HandleWishListButton>
-          {checkBeerInfoInWishList() ? (
-            <Style.CustomDeleteIcon onClick={() => removeBeerInfo(id)} />
-          ) : (
+        {checkBeerInfoInWishList() ? (
+          <>
+            <Style.HandleWishListButton>
+              <Style.CustomDeleteIcon onClick={() => removeBeerInfo(id)} />
+            </Style.HandleWishListButton>
+            <Style.CustomCheckCircleIcon />
+          </>
+        ) : (
+          <Style.HandleWishListButton>
             <Style.CustomShoppingCartIcon onClick={() => addBeerInfo(props.beerInfo)} />
-          )}
-        </Style.HandleWishListButton>
-        {checkBeerInfoInWishList() && <Style.CustomCheckCircleIcon />}
+          </Style.HandleWishListButton>
+        )}
       </Style.StatusBar>
       <Style.ProductFigure>
         <Style.ProductImage src={image_url} />
