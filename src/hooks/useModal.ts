@@ -3,8 +3,7 @@ import React, { useState } from 'react';
 function useModal() {
   const [isShowing, setIsShowing] = useState(false);
 
-  const handleModalVisible = (e: React.MouseEvent<HTMLDivElement>) => {
-    console.log(e);
+  const handleModalVisible = () => {
     setIsShowing(!isShowing);
   };
 

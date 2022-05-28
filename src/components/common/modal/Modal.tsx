@@ -1,12 +1,9 @@
 import React, { Fragment, PropsWithChildren } from 'react';
 import ReactDOM from 'react-dom';
-import styled from 'styled-components';
-
-import ModalTemplate from './ModalTemplate';
-
+import * as Style from './ModalStyle';
 interface ModalProps {
   isShowing: boolean;
-  hide: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  hide: (e: React.MouseEvent<HTMLDivElement | HTMLButtonElement>) => void;
 }
 
 function Modal({ isShowing, hide, children }: PropsWithChildren<ModalProps>) {
@@ -14,26 +11,22 @@ function Modal({ isShowing, hide, children }: PropsWithChildren<ModalProps>) {
     document.getElementById('body').style.overflow = 'hidden';
     return ReactDOM.createPortal(
       <Fragment>
-        <BodyBlackoutStyle onClick={hide} />
-        <ModalTemplate>{children}</ModalTemplate>
+        <Style.BodyBlackoutStyle onClick={hide} />
+        <Style.ModalTemplate isShowing={isShowing}>
+          <Style.Inner>
+            <Style.DeleteButton onClick={hide}>
+              <Style.DeleteCustomIcon />
+            </Style.DeleteButton>
+            {children}
+          </Style.Inner>
+        </Style.ModalTemplate>
       </Fragment>,
-      document.body,
+      document.getElementById('portal-section'),
     );
   }
 
   document.getElementById('body').style.overflow = 'scroll';
   return null;
 }
-
-const BodyBlackoutStyle = styled.div`
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.65);
-  cursor: pointer;
-  z-index: 9998;
-`;
 
 export default Modal;
