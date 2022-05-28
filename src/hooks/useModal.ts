@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 function useModal() {
   const [isShowing, setIsShowing] = useState(false);

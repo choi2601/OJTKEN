@@ -21,7 +21,7 @@ const BodyBlackoutStyle = styled.div`
   }}
 `;
 
-const ModalTemplate = styled.section<{ isShowing: boolean }>`
+const ModalTemplate = styled.div<{ isShowing: boolean }>`
   ${({ theme, isShowing }) => {
     const {
       layer,
@@ -49,7 +49,7 @@ const Inner = styled.div`
 
     return css`
       position: relative;
-      padding: 2rem;
+      padding: 1.5rem;
       text-align: right;
       border: 1px ${color.gray[500]} solid;
       border-radius: 2px;
@@ -67,6 +67,14 @@ const DeleteButton = styled(ButtonCenter)`
   cursor: pointer;
 `;
 
-const DeleteCustomIcon = styled(ClearIcon)``;
+const DeleteCustomIcon = styled(ClearIcon)`
+  ${({ theme }) => {
+    const { color } = theme;
+
+    return css`
+      color: ${color.gray[600]};
+    `;
+  }}
+`;
 
 export { BodyBlackoutStyle, ModalTemplate, Inner, DeleteButton, DeleteCustomIcon };

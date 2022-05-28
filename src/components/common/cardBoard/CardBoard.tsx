@@ -10,7 +10,6 @@ import useModal from '@hooks/useModal';
 import { useWishListStore } from '@states/wishListStore';
 
 import type { BeerInfoType } from '@type/beerInfo';
-import ModalTemplate from '../modal/ModalTemplate';
 
 interface CardBoardProps {
   beerInfo: BeerInfoType;
