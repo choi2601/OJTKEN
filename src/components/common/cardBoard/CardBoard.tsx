@@ -28,11 +28,9 @@ function CardBoard(props: CardBoardProps) {
 
   return (
     <>
-      {isShowing && (
-        <Modal isShowing={isShowing} hide={handleModalVisible}>
-          <div>test</div>
-        </Modal>
-      )}
+      <Modal isShowing={isShowing} hide={handleModalVisible}>
+        <div>test</div>
+      </Modal>
       <Style.CardBoardWrapper>
         <Style.StatusBar>
           {checkBeerInfoInWishList() ? (

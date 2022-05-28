@@ -19,10 +19,10 @@ function Modal({ isShowing, hide, children }: PropsWithChildren<ModalProps>) {
       </Fragment>,
       document.body,
     );
-  } else {
-    document.getElementById('body').style.overflow = 'scroll';
-    return null;
   }
+
+  document.getElementById('body').style.overflow = 'scroll';
+  return null;
 }
 
 const BodyBlackoutStyle = styled.div`
