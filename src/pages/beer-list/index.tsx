@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useQuery } from 'react-query';
 
 import ProductTable from '@components/common/productTable/ProductTable';
@@ -36,6 +36,13 @@ function BeerList() {
 export default BeerList;
 
 const BeerListWrapper = styled.section`
-  position: relative;
-  padding: 10px 80px;
+  ${({ theme }) => {
+    const { color } = theme;
+
+    return css`
+      position: relative;
+      padding: 10px 80px;
+      background-color: ${color.white};
+    `;
+  }}
 `;
