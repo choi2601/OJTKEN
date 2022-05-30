@@ -21,7 +21,6 @@ function CardBoard(props: CardBoardProps) {
   } = props;
   const { wishList, addBeerInfo, removeBeerInfo } = useWishListStore();
   const { isShowing, handleModalVisible } = useModal();
-  const [currentBeerInfo, _] = useState(props.beerInfo);
 
   const checkBeerInfoInWishList = () => {
     const isExisted = wishList.find((beerInfo) => beerInfo.id === id);
@@ -32,7 +31,7 @@ function CardBoard(props: CardBoardProps) {
   return (
     <>
       <Modal isShowing={isShowing} hide={handleModalVisible}>
-        <DetailInfo beerInfo={currentBeerInfo} />
+        <DetailInfo beerInfo={props.beerInfo} />
       </Modal>
       <Style.CardBoardWrapper>
         <Style.StatusBar>
