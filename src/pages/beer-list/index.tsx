@@ -11,12 +11,12 @@ import useRange from '@hooks/useRange';
 
 function BeerList() {
   const page = usePageNumberStore((state) => state.page);
-  const { searchData, abvRange, handleRangeChange, searchABV, resetABV } = useRange([1, 15]);
+  const { confirmAbvRange, abvRange, handleRangeChange, searchABV, resetABV } = useRange([1, 15]);
 
-  const { data, isLoading } = useQuery(
-    ['beer-list', page],
+  const { data } = useQuery(
+    ['beer-list', page, confirmAbvRange],
     async () =>
-      await axiosProduct.get('', { params: { page } }).then((res) => {
+      await axiosProduct.get('', { params: { page, ...confirmAbvRange } }).then((res) => {
         window.scrollTo(0, 0);
         return res;
       }),
@@ -27,16 +27,10 @@ function BeerList() {
     },
   );
 
-  const checkSearchDataEmpty = () => {
-    return searchData;
-  };
-
-  if (isLoading) return <div>Loading</div>;
-
   return (
     <>
       <Tooltip abvRange={abvRange} handleRangeChange={handleRangeChange} searchABV={searchABV} resetABV={resetABV} />
-      <ProductTable currentDataInfo={checkSearchDataEmpty() ? searchData : data?.data} sort="beer-list" />
+      <ProductTable currentDataInfo={data?.data} sort="beer-list" />
       <Pagination />
     </>
   );

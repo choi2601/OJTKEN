@@ -1,7 +1,4 @@
-import styled, { css } from 'styled-components';
-
 import ProductTable from '@components/common/productTable/ProductTable';
-import Pagination from '@components/common/pagination/Pagination';
 import AlertForm from '@components/common/alertForm/AlertForm';
 
 import { useWishListStore } from '@states/wishListStore';
@@ -19,8 +16,7 @@ function WishList() {
         <AlertForm />
       ) : (
         <>
-          <ProductTable currentDataInfo={wishList} />
-          <Pagination />
+          <ProductTable sort="wish-list" currentDataInfo={wishList} />
         </>
       )}
     </>

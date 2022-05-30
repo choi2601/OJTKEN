@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-import { axiosProduct } from '@api/base.api';
-
-import type { BeerInfoType } from '@type/beerInfo';
+import { usePageNumberStore } from '@states/pageNumberStore';
 
 function useRange(range: number[]) {
-  const [searchData, setSearchData] = useState<BeerInfoType[] | null>(null);
+  const { resetPage } = usePageNumberStore();
+
+  const [confirmAbvRange, setConfirmAbvRange] = useState<{ abv_gt: number; abv_lt: number } | null>(null);
   const [abvRange, setAbvRange] = useState<number[]>(range);
 
   const handleRangeChange = (e: Event, newValue: number | number[]) => {
@@ -18,17 +18,17 @@ function useRange(range: number[]) {
       abv_lt: abvRange[1] + 1,
     };
 
-    const { data } = await axiosProduct.get('', { params });
-    setSearchData(data);
+    setConfirmAbvRange(params);
   };
 
   const resetABV = () => {
     const resetRange = [1, 15];
     setAbvRange(resetRange);
-    setSearchData(null);
+    setConfirmAbvRange(null);
+    resetPage();
   };
 
-  return { searchData, abvRange, handleRangeChange, searchABV, resetABV };
+  return { confirmAbvRange, abvRange, handleRangeChange, searchABV, resetABV };
 }
 
 export default useRange;

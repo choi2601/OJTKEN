@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import * as Style from './PaginationStyle';
 
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
@@ -11,7 +11,6 @@ function Pagination() {
   const { page, nextPage, prevPage, setPage } = usePageNumberStore();
   const [pageList, setPageList] = useState([1, 2, 3, 4]);
 
-  // filter 결과에 따라 조건부 할당 예정
   const maxPage = DEFAULT_MAX_PAGE;
 
   const handleSetPage = useCallback(
@@ -40,6 +39,7 @@ function Pagination() {
         for (let number = newPage; number < lastNumber; number++) {
           newPageList.push(number);
         }
+        console.log(newPageList);
         setPageList(newPageList);
       }
 
@@ -78,6 +78,10 @@ function Pagination() {
 
     return page === DEFAULT_MAX_PAGE;
   };
+
+  useEffect(() => {
+    if (page === DEFAULT_MIN_PAGE) setPageList([1, 2, 3, 4]);
+  }, [page]);
 
   return (
     <Style.PaginationWrapper>

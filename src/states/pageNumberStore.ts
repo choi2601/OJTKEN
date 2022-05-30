@@ -5,6 +5,7 @@ interface PageNumberState {
   nextPage: () => void;
   prevPage: () => void;
   setPage: (newPage: number) => void;
+  resetPage: () => void;
 }
 
 const usePageNumberStore = create<PageNumberState>((set) => ({
@@ -22,6 +23,11 @@ const usePageNumberStore = create<PageNumberState>((set) => ({
   setPage: (newPage) => {
     set(() => ({
       page: newPage,
+    }));
+  },
+  resetPage: () => {
+    set(() => ({
+      page: 1,
     }));
   },
 }));
