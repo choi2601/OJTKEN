@@ -14,7 +14,7 @@ function WishList() {
   };
 
   return (
-    <WishListWrapper>
+    <>
       {checkCurrentWishListOfEmpty() ? (
         <AlertForm />
       ) : (
@@ -23,20 +23,8 @@ function WishList() {
           <Pagination />
         </>
       )}
-    </WishListWrapper>
+    </>
   );
 }
 
 export default WishList;
-
-const WishListWrapper = styled.section`
-  ${({ theme }) => {
-    const { color } = theme;
-
-    return css`
-      position: relative;
-      padding: 10px 80px;
-      background-color: ${color.white};
-    `;
-  }}
-`;

@@ -17,7 +17,7 @@ function Tooltip({ setSearchData }: TooltipProps) {
     setAbvRange(newValue as number[]);
   };
 
-  const searchABV = async (e: React.MouseEvent<HTMLButtonElement>) => {
+  const searchABV = async () => {
     const params = {
       abv_gt: abvRange[0],
       abv_lt: abvRange[1] + 1,

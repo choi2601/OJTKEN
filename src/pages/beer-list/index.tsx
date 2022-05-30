@@ -35,24 +35,12 @@ function BeerList() {
   if (isLoading) return <div>Loading</div>;
 
   return (
-    <BeerListWrapper>
+    <>
       <Tooltip setSearchData={setSearchData} />
-      <ProductTable currentDataInfo={checkSearchDataEmpty() ? searchData : data?.data} />
+      <ProductTable currentDataInfo={checkSearchDataEmpty() ? searchData : data?.data} sort="beer-list" />
       <Pagination />
-    </BeerListWrapper>
+    </>
   );
 }
 
 export default BeerList;
-
-const BeerListWrapper = styled.section`
-  ${({ theme }) => {
-    const { color } = theme;
-
-    return css`
-      position: relative;
-      padding: 10px 80px;
-      background-color: ${color.white};
-    `;
-  }}
-`;

@@ -6,13 +6,14 @@ import type { BeerInfoType } from '@type/beerInfo';
 
 interface ProductTableProps {
   currentDataInfo: BeerInfoType[];
+  sort: string;
 }
 
 function ProductTable(props: ProductTableProps) {
-  const { currentDataInfo } = props;
+  const { currentDataInfo, sort } = props;
 
   return (
-    <Style.ProductTableWrapper>
+    <Style.ProductTableWrapper sort={sort}>
       <Style.ProductList>
         {currentDataInfo?.map((beerInfo: BeerInfoType) => {
           return (

@@ -1,7 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const ProductTableWrapper = styled.section`
-  margin-top: 50px;
+const ProductTableWrapper = styled.section<{ sort: string }>`
+  ${({ sort }) => {
+    return css`
+      margin-top: ${sort === 'beer-list' ? '50px' : '100px'};
+    `;
+  }}
 `;
 
 const ProductList = styled.ul`
