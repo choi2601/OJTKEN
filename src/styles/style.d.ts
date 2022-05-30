@@ -36,5 +36,13 @@ declare module 'styled-components' {
       low: number;
       high: number;
     };
+    layer: {
+      nav: number;
+      background: number;
+      contents: number;
+    };
+    animation: {
+      modalIn: (timeout: number) => string;
+    };
   }
 }

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 const NavigationWrapper = styled.nav`
   ${({ theme }) => {
-    const { color } = theme;
+    const { color, layer } = theme;
 
     return css`
       position: fixed;
@@ -10,7 +10,7 @@ const NavigationWrapper = styled.nav`
       right: 0;
       width: 60vw;
       margin: 0 auto;
-      z-index: 9999;
+      z-index: ${layer.nav};
       background-color: ${color.blue[900]};
     `;
   }}

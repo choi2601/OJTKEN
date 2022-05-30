@@ -126,8 +126,6 @@ const CustomSportsBarIcon = styled(SportsBarIcon)<{ abv: number }>`
     const { color, abvRatio } = theme;
 
     return css`
-      width: 23px;
-      height: 23px;
       margin-left: 5px;
       color: ${abv < abvRatio.low
         ? color.abvAlert['low']

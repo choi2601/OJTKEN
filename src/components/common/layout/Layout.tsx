@@ -7,7 +7,7 @@ function Layout({ children }: PropsWithChildren<unknown>) {
   return (
     <Style.LayoutWrapper>
       <Navigation />
-      {children}
+      <Style.Inner>{children}</Style.Inner>
       <Style.Footer />
     </Style.LayoutWrapper>
   );

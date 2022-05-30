@@ -36,6 +36,27 @@ const theme: DefaultTheme = {
     low: 5,
     high: 10,
   },
+  layer: {
+    nav: 9997,
+    background: 9998,
+    contents: 9999,
+  },
+  animation: {
+    modalIn: (timeout) => `
+  animation: modal-in ${timeout}s;
+
+  @keyframes modal-in {
+    from {
+      opacity: 0;
+      margin-top: -50px;
+    }
+    to {
+      opacity: 1;
+      margin-top: 0;
+    }
+  }
+  `,
+  },
 };
 
 export { theme };
