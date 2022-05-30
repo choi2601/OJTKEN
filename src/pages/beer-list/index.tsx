@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import styled, { css } from 'styled-components';
 import { useQuery } from 'react-query';
 
 import Tooltip from '@components/common/tooltip/Tooltip';
@@ -9,11 +7,12 @@ import Pagination from '@components/common/pagination';
 import { usePageNumberStore } from '@states/pageNumberStore';
 import { axiosProduct } from '@api/base.api';
 
-import type { BeerInfoType } from '@type/beerInfo';
+import useRange from '@hooks/useRange';
 
 function BeerList() {
   const page = usePageNumberStore((state) => state.page);
-  const [searchData, setSearchData] = useState<BeerInfoType[] | null>(null);
+  const { searchData, abvRange, handleRangeChange, searchABV, resetABV } = useRange([1, 15]);
+
   const { data, isLoading } = useQuery(
     ['beer-list', page],
     async () =>
@@ -36,7 +35,7 @@ function BeerList() {
 
   return (
     <>
-      <Tooltip setSearchData={setSearchData} />
+      <Tooltip abvRange={abvRange} handleRangeChange={handleRangeChange} searchABV={searchABV} resetABV={resetABV} />
       <ProductTable currentDataInfo={checkSearchDataEmpty() ? searchData : data?.data} sort="beer-list" />
       <Pagination />
     </>
