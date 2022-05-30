@@ -1,4 +1,4 @@
-import React, { useState, Dispatch, SetStateAction } from 'react';
+import React from 'react';
 import * as Style from './TooltipStyle';
 
 import Slider from '@mui/material/Slider';

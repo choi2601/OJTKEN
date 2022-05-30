@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import * as Style from './CardBoardStyle';
 
@@ -21,8 +21,7 @@ function CardBoard(props: CardBoardProps) {
   } = props;
   const { wishList, addBeerInfo, removeBeerInfo } = useWishListStore();
   const { isShowing, handleModalVisible } = useModal();
-
-  const [selectedBeerInfo, setSelectedBeerInfo] = useState<BeerInfoType | null>(null);
+  const [currentBeerInfo, _] = useState(props.beerInfo);
 
   const checkBeerInfoInWishList = () => {
     const isExisted = wishList.find((beerInfo) => beerInfo.id === id);
@@ -30,19 +29,10 @@ function CardBoard(props: CardBoardProps) {
     return isExisted;
   };
 
-  const handleSelectedBeerInfo = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      const currentSelectedBeerInfo = JSON.parse(e.currentTarget.dataset.info);
-      setSelectedBeerInfo(currentSelectedBeerInfo);
-      handleModalVisible();
-    },
-    [selectedBeerInfo, isShowing],
-  );
-
   return (
     <>
       <Modal isShowing={isShowing} hide={handleModalVisible}>
-        <DetailInfo beerInfo={selectedBeerInfo} />
+        <DetailInfo beerInfo={currentBeerInfo} />
       </Modal>
       <Style.CardBoardWrapper>
         <Style.StatusBar>
@@ -59,7 +49,7 @@ function CardBoard(props: CardBoardProps) {
             </Style.HandleWishListButton>
           )}
         </Style.StatusBar>
-        <Style.ProductFigure data-info={JSON.stringify(props.beerInfo)} onClick={handleSelectedBeerInfo}>
+        <Style.ProductFigure onClick={handleModalVisible}>
           <Style.ProductImage src={image_url} />
         </Style.ProductFigure>
         <Style.ProductMainInfo>
